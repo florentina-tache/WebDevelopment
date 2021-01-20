@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Inregistrare utilizator</title>
+
+	<%- include("../fragmente/head") %>
+</head>
+<body class="container">
+
+<header>
+    <%- include("../fragmente/header") %>
+</header>
+
+
+<main>
+    <div class="afisaj">
+        <h1>Inregistrare utilizator</h1>
+        
+		</p>
+		<% if (locals.err !="") { %>
+		<form method="post" class="date"  action="/inreg" id="inregistrare" enctype="multipart/form-data" onsubmit="return validateForm()">
+			<p>
+			<label>
+				Username: <input type="text" id="usernameInreg" name="username"  value="" required>
+			</label>
+			</p>
+			<p>
+			<label>
+				Nume: <input type="text" id="numeInreg" name="nume" value="" required>
+			</label>
+			</p>
+			<p>
+			<label>
+				Prenume: <input type="text" id="prenumeInreg" name="prenume" value="" required>
+			</label>
+			</p>
+			<p>
+			<label>
+				Parola: <input type="password" id="parola" name="parola" value="" required>
+			</label>
+			</p>
+			<p>
+			<label>
+				Reintroduceti parola: <input type="password" id="reintrParola" name="rparola" value="" required>
+			</label>
+			</p>
+			<p>
+			<label>
+				Email: <input type="text" id="emailInreg" name="email" value=""  size="50" required>
+			</label>
+			</p>
+			<p>
+				<label>
+					Problema vedere: 			
+					<label> Da
+						<input id="pb_vedere_da" name="gr_check" value="da" type="checkbox"/>
+					</label>
+					<label> Nu
+						<input id="pb_vedere_nu" name="gr_check" value="nu" type="checkbox"/>
+					</label>
+				</label>
+				</p>
+			<p>
+			<label>
+				Poza: <input type="file" name="poza">
+			</label>
+			</p>
+			<p>		
+				<input type="submit" value="Trimite">
+				<input type="reset" value="Reseteaza">
+			</p>
+		</form>
+	<% } %>
+	<%- (locals.raspuns?locals.raspuns:"")+"<br/>"+(locals.err?locals.err:"")%>
+
+    </div>
+</main>
+
+<footer>
+    <%- include("../fragmente/footer") %>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+	<%- include("../fragmente/head.ejs") %>
+	
+	<title>Produse</title>
+
+
+</head>
+<body class="light">
+
+<%- include("../fragmente/header.ejs") %>
+
+<main>
+	
+	
+<section class="input_fields">
+	<label> Tara:
+		<input id="i_text" type="text" value="">
+	</label>
+
+	<label for="i_range"> Distanta: 100
+		<input id="i_range" type="range" min="100" max="16000" step="2" value="16000"> 16000 (selectat: <span id="info_range">16000</span>)
+	</label>
+
+	<div class="input_inline"> Categorie: 
+		<%
+		const distinct = (value, index, self) => {return self.indexOf(value) === index;}
+		var products = [];
+		for(let i=0;i<locals.produse.length;i++){
+			products.push(locals.produse[i].categorie);}
+		var distinct_products = products.filter(distinct);
+		//console.log(distinct_products);
+		for(let i=0;i<distinct_products.length;i++){
+			%>
+			<label><%=distinct_products[i]%>
+			<input id="i_rad<%=i+1%>" name="gr_rad" value="<%=distinct_products[i]%>" type="radio"/>
+		</label>
+			<%}%>
+			<label>Nimic
+			<input id="i_rad" name="gr_rad" checked value="nimic" type="radio"/>
+		</label>
+	</div>
+
+	<div class="input_inline">
+	Viza:
+
+			<label> Cu viza
+                <input id="i_check1" name="gr_chck" checked value="" type="checkbox"/>
+			</label>
+			<label> Fara viza
+                <input id="i_check2" name="gr_chck" checked value="" type="checkbox"/>
+            </label>
+
+			
+
+	
+	</div>
+
+	<label>Descriere:
+		<textarea id="i_textarea" value="" ></textarea>
+	</label>
+
+	<label>Oras:
+		<select id="i_sel_simplu">
+			<option value="nimic" selected>Nimic</option>
+			<%
+			//const distinct = (value, index, self) => {return self.indexOf(value) === index;}
+			var products = [];
+			for(let i=0;i<locals.produse.length;i++){
+				products.push(locals.produse[i].oras);}
+			var distinct_products = products.filter(distinct);
+			//console.log(distinct_products);
+			for(let i=0;i<distinct_products.length;i++){
+				%>
+
+				<option value="<%=distinct_products[i]%>"><%=distinct_products[i]%></option>
+
+				<%}%>
+				
+		</select>
+	</label>
+
+
+	<label>Luni bune de vizitat:
+		<select id="i_sel_multiplu" multiple size="4">
+			<option value="Ianuarie" selected>Ianuarie</option>
+			<option value="Februarie" selected>Februarie</option>
+			<option value="Martie" selected>Martie</option>
+			<option value="Aprilie" selected>Aprilie</option>
+			<option value="Mai" selected>Mai</option>
+			<option value="Iunie" selected>Iunie</option>
+			<option value="Iulie" selected>Iulie</option>
+			<option value="August" selected>August</option>
+			<option value="Septembrie" selected>Septembrie</option>
+			<option value="Octombrie" selected>Octombrie</option>
+			<option value="Noiembrie" selected>Noiembrie</option>
+			<option value="Decembrie" selected>Decembrie</option>
+		</select>
+	</label>
+
+
+	
+	<script src="scripturi/sortari.js"></script>
+	
+	<%
+		var tari = [];
+		for(let i=0;i<locals.produse.length;i++){
+			tari.push(locals.produse[i].tara);	
+		}
+	console.log(tari);
+	
+	%>
+
+	<button id="filtrare">Filtreaza</button>
+	<button id="sort_asc">Sorteaza crescator</button>
+	<button id="sort_desc">Sorteaza descrescator</button>
+	<button id="average">Distanta medie</button>
+	<button id="reset_filter">Reseteaza filtrele</button>
+
+</section>
+
+<h2>Produse</h2>
+
+<section id="gr-locatii">
+	<%for(let i=0;i<locals.produse.length;i++){%>
+		<%- include("../fragmente/produs.ejs",{produs:locals.produse[i]}) %>
+	<%}%>
+</section>
+</main>
+
+<%- include("../fragmente/footer.ejs") %>
+</body>
+</html>

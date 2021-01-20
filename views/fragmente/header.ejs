@@ -1,0 +1,81 @@
+<header>
+ 
+      <nav>
+        <label id="hamburger" for="ch-menu">
+          <img src="imagini/img_index/Hamburger_icon_alb.png" alt="menu">
+        </label>
+        <input id="ch-menu" type="checkbox">
+        <ul class="menu">
+          <li><a href="/index">
+            <span class="acasa">Acasa</span>  <span id="homeIcon" class="fas fa-home"></span></a>
+           </li>
+
+          <li>       
+            <label for="opt_acasa">
+                Despre noi
+            </label>
+            <input class="ch-submenu" type="checkbox" id="opt_acasa">
+            <ul class="submenu">
+              <li><a href="index#despre_aplicatie">Despre aplicatie</a></li>
+              <li><a href="index#video">Video</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <label for="opt_galerii">
+              Galerii
+            </label>
+            <input class="ch-submenu" type="checkbox" id="opt_galerii">
+            <ul class="submenu">
+              <li><a href="galerie_statica">Statica</a></li>
+              <li><a href="galerie_animata">Animatie</a></li>
+            </ul>
+          </li>
+
+          <li><a href="produse">
+            <span class="acasa">Locatii</span></a>
+           </li>
+          
+           <li><a href="inregistrare_user">
+            <span class="acasa">Inregistrare</span></a>
+           </li>
+
+           <% if (locals.utilizator && locals.utilizator.rol=="admin") { %>
+            <li><a href="/useri">Utilizatori</a></li>
+        <% } %>
+
+          <li><button onclick="f()" id="toggleButton" class="far fa-sun"></button></li>
+        </ul>
+      </nav>
+      
+      <% if (!locals.utilizator) { %>
+        <p>Va rugam sa va logati: <br/>
+        <form id="login" method="post" action="/login">
+          
+          <label>
+            Username: <input type="text" name="username" value="">
+          </label>
+          <label>
+            Parola: <input type="password" name="parola" value="">
+          </label>
+          
+          <input type="submit" value="Submit">
+        </form>
+        <% } %>
+
+        
+        <% if (locals.utilizator) { %>
+          <p>Iesire <a href="/logout" id="schimbareLogout" title="logout"><span id="hoverLogout"><%=locals.utilizator.username%></span></a></p>
+
+          <% if (locals.utilizator.problema_vedere){ %>
+            <script> 
+            document.body.classList.add("doubleFont"); 
+            
+            </script>
+           <% } %>
+
+          <% } %>
+
+
+
+</header>

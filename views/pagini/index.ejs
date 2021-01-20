@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+    <%- include("../fragmente/head.ejs") %>
+<body class="light">
+    <%- include("../fragmente/header.ejs") %>
+
+  <main id="main-index">
+    <section id="imgInceput">
+      <img id="primaImg" src="imagini/img_index/munti.png" alt="Imagine Munti">
+  
+      <div class="centrare1">
+        <h1>Finder</h1>
+      </div>
+  
+      <div class="centrare2">
+        <p style="color:black;">
+          <i lang="en">Pick and choose it</i>
+        </p>
+      </div>
+    </section>
+
+      <section id="poza1">
+      <figure>
+        <picture>
+          <source media="(min-width:1200px)" srcset="imagini/img_index/andaman1.jpg">
+          <source media="(min-width:800px)" srcset="imagini/img_index/andaman2.jpg">
+            <img src="imagini/img_index/andaman3.jpg" alt="Insula Andaman">
+            </picture>
+          <figcaption>Insula Andaman</figcaption>
+      </figure>
+    </section>
+
+      <section id="despre-a">
+        <h2 id="despre_aplicatie">Despre aplicatie <span class="fas fa-desktop"></span></h2>
+        <p>
+          Aceasta aplicatie a fost inceputa in data de <time datetime="2020-10-21">2020-10-21</time> si saptamanal vor fi implementate functionalitati noi!
+        </p>
+      </section>
+
+      <section id="cum-f">
+        <h2 id="cum_functioneaza">Cum functioneaza? <span class="fas fa-map-marked-alt"></span></h2>
+        <p>
+          Finder este o aplicatie creata special pentru romanii care doresc sa gaseasca locuri impresionanante
+          pentru a-si face o <b>vacanta</b> bine meritata. Acum poti alege destinatia de vacanta, doar prin admirarea
+          fotografiilor cu peisaje si atractii turistice.
+        </p>
+      </section>
+    
+
+
+    
+      <section id="poza2">
+      <figure>
+        <picture>
+          <source media="(min-width:1200px)" srcset="imagini/img_index/bruges1.jpg">
+          <source media="(min-width:800px)" srcset="imagini/img_index/bruges2.jpg">
+            <img src="imagini/img_index/bruges3.jpg" alt="Bruges (Belgia)">
+            </picture>
+          <figcaption>Bruges (Belgia)</figcaption>
+      </figure>
+    </section>
+      
+      <br />
+      <section id="cum-d">
+      <h2 id="cum_descopar">Cum descopar? <span class="fas fa-globe-americas"></span></h2>
+      <p>
+        Creaza-ti un cont, admira locatiile, apasa butonul &ldquo;Imi place&rdquo; si ti se vor oferi instant detalii
+        despre noua destinatie de vacanta. In plus, toate destinatiile se vor salva in lista de favorite
+        pe care o poti revedea in orice moment. Fii tu <em>primul</em> care descopera noile destinatii!
+      </p>
+    </section>
+      
+    
+
+  <section id="tabel">
+    <div class = "table-container">
+      <table>
+
+        <colgroup>
+          <col span="2" style="background-color:Moccasin">
+          <col style="background-color:BurlyWood">
+          <col style="background-color:Moccasin">
+          <col style="background-color:BurlyWood">
+         
+        </colgroup>
+
+        <caption>Cateva date despre calatorit</caption>
+
+        <thead>
+          <tr>
+            <th colspan="2">Continent</th>
+            <th>Numar tari</th>
+            <th>Procent de vizitare</th>
+            <th>Cea mai vizitata tara</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr>
+            <td colspan="2">Africa</td>
+            <td> 54 </td>
+            <td> 2.3 </td>
+            <td>Maroc</td>
+          </tr>
+
+
+          <tr>
+            <td colspan="2">Asia</td>
+            <td> 47 </td>
+            <td> 19.5 </td>
+            <td>China</td>
+          </tr>
+
+          <tr>
+            <td colspan="2">Europa</td>
+            <td> 47 </td>
+            <td> 58 </td>
+            <td>Franta</td>
+          </tr>
+
+          <tr>
+            <td>Australia</td>
+            <td>Oceania</td>
+            <td> 14 </td>
+            <td> 1.6 </td>
+            <td> Australia </td>
+          </tr>
+
+          <tr>
+            <td rowspan="2" colspan="2">America de Nord <br /> America de Sud</td>
+            <td>23</td>
+            <td> 16 </td>
+            <td>S.U.A.</td>
+
+          </tr>
+
+          <tr>
+            <td>12</td>
+            <td> 2.6 </td>
+            <td>Argentina</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+<section id="video">
+    <video width="520" height="440" controls>
+      <source src="videoclipuri/TheCalling.mp4" type="video/mp4">
+      <track default src="data:image/png;base64,V0VCVlRUDQoNCg0KMDA6MDIuMDAwIC0tPiAwMDowNC4wMDAgYWxpZ246c3RhcnQgbGluZTotMQ0KRXZlcnlvbmUgaGFzIHRoaXMgPGI+dm9pY2U8L2I+IGluc2lkZSwNCg0KMDA6MDQuMDAwIC0tPiAwMDowNy4wMDAgYWxpZ246c3RhcnQgbGluZTotMQ0KdGhlIG9uZSB0aGF0IHRlbGxzIHVzIHRoZXJlJ3MgbW9yZSB0byBsaWZlLA0KDQowMDowNy4wMDAgLS0+IDAwOjEyLjAwMCBhbGlnbjpzdGFydCBsaW5lOi0xDQpidXQgaXQgdGFrZXMgY291cmFnZSB0byBiZWxpZXZlIGluIGl0LA0KbGlzdGVuIHRvIGl0IGFuZCB0YWtlIGFjdGlvbi4NCg0KMDA6MTUuMDAwIC0tPiAwMDoxNi41MDAgYWxpZ246c3RhcnQgbGluZTotMQ0KVGhlIGJlc3QgcGFydCBpcywNCg0KMDA6MTcuMDAwIC0tPiAwMDoyMi4wMDAgYWxpZ246c3RhcnQgbGluZTotMQ0KbGVhcGluZyBvZmYgdGhlIGNsaWZmIGlzIGFjdHVhbGx5IGhvdyB3ZSBhY3R1YWxseSBsZWFybiB0byBmbHkuDQoNCjAwOjMwLjAwMCAtLT4gMDA6MzUuMDAwDQpXaGVuIEkgZmlyc3Qgc3RhcnRlZCB0cmF2ZWxsaW5nIHRoZSB3b3JsZCBJIGhhZCBubyBpZGVhIGhvdyBpdCB3b3VsZCB3b3JrIG91dC4NCg0KMDA6MzUuMDAwIC0tPiAwMDozOC41MDANCkkganVzdCBrbmV3IHRoYXQgSSB3YW50ZWQgdG8gbGl2ZSBhbiBleHRyYW9yZGluYXJ5IGxpZmUuDQoNCjAwOjM5LjAwMCAtLT4gMDA6NDIuMDAwDQpJIGtuZXcgdGhlcmUgd2VyZSBvdGhlciBwZW9wbGUgd2hvIHRyYXZlbGVkIHRoZSB3b3JsZA0KDQowMDo0Mi4wMDAgLS0+IDAwOjQzLjAwMA0KYW5kIGRpZCB3b3JrIHRoZXkgbG92ZWQNCg0KMDA6NDMuMDAwIC0tPiAwMDo0NS41MDANCmFuZCBJIHdhbnRlZCB0byBjcmVhdGUgYSBsaWZlIGxpa2UgdGhhdC4NCg0KMDA6NDUuNTAwIC0tPiAwMDo0Ny41MDANCkEgbGlmZSB3aGVyZSBJIGZlbHQgYWxpdmUhDQoNCjAwOjQ5LjAwMCAtLT4gMDA6NTIuMDAwDQpBbmQgSSBzcGVudCBteSBkYXlzIGRvaW5nIHRoaW5ncyB0aGF0IGZlbHQgbWVhbmluZ2Z1bCB0byBtZS4NCg0KMDA6NTQuMDAwIC0tPiAwMDo1Ni4wMDANCk15IGhlYXJ0IGtuZXcgaXQgd2FzIHBvc3NpYmxlLg0KDQowMDo1Ni41MDAgLS0+IDAwOjU4LjUwMA0KTXkgbWluZCB3YXMgYWZyYWlkLg0KDQowMTowMC4wMDAgLS0+IDAxOjAyLjAwMA0KSSBrbmV3IEkgaGFkIHRvIGdpdmUgaXQgYSBzaG90Lg0KDQowMTowNC41MDAgLS0+IDAxOjA4LjIwMA0KU28sIG9uZSBkYXkgYXQgYSB0aW1lLCBJIGNob3NlIGxvdmUgb3ZlciBmZWFyLg0KDQowMTowOC4yMDAgLS0+IDAxOjA5LjUwMA0KQW5kIGl0IGhhcHBlbmVkLg0KDQowMToxMC4wMDAgLS0+IDAxOjEyLjAwMA0KSXQncyBoYXBwZW5pbmcu" kind="subtitles" srclang="en" label="English">
+  </video>
+</section>
+  <br/>
+
+
+<div class="banner">Disclaimer: Acesta este un proiect scolar si nu are scop comercial.</div>
+  </main>
+
+  <%- include("../fragmente/footer.ejs") %>
+
+</body>
+</html>

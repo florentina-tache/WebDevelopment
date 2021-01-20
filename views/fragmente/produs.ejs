@@ -1,0 +1,76 @@
+<article id="art<%=locals.produs.id%>" class="<%=locals.produs.categorie%>">
+<h3 class="nume" style = "color:var(--culoare-text);">Nume:<a href="/produs/<%=locals.produs.id%>"><%=locals.produs.nume_atractie%></a></h3>
+<p>Categorie:<span class="categorie"><%=locals.produs.categorie%></span></p>
+<p class="descriere"><%=locals.produs.descriere%></p>
+<img src="<%=produs.imagine%>" alt="<%=produs.nume%>"/>
+<div class = "table-container" style="float: right;">
+    <table>
+
+      <colgroup>
+        <col span="2" style="background-color:Moccasin">
+        <col style="background-color:BurlyWood">
+        <col style="background-color:Moccasin">
+        <col style="background-color:BurlyWood">
+       
+      </colgroup>
+
+
+      <thead>
+        <tr>
+          <th>Caracteristica</th>
+          <th>Valoare</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Distanta(km)</td>
+          <td class="distanta"><%=locals.produs.distanta%></td>
+        </tr>
+
+        <tr>
+          <td>Oras</td>
+          <td class="oras"><%=locals.produs.oras%></td>
+        </tr>
+
+        <tr>
+          <td>Tara</td>
+          <td class="tara"><%=locals.produs.tara%></td>
+        </tr>
+
+        <tr>
+            <td>Continent</td>
+            <td class="continent"><%=locals.produs.continent%></td>
+          </tr>
+
+          <tr>
+            <td>Luni bune de vizitat</td>
+            <td class="luni_vizitat"><%=locals.produs.luni_vizitat%></td>
+          </tr>
+
+          <tr>
+            <td>Data infiintarii</td>
+            <% var luna = locals.produs.data_infiintare.getMonth();
+                var zi = locals.produs.data_infiintare.getDate();
+                var zi_sapt = locals.produs.data_infiintare.getDay();
+                var an = locals.produs.data_infiintare.getFullYear(); 
+            var lunile_anului = ["Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie",
+            "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"];
+             var zilele_saptamanii = ['Duminica', 'Luni', 'Marti', 'Miercuri', 'Joi', 'Vineri', 'Sambata']; 
+             var data_formatata = zi+'/'+lunile_anului[luna]+'/'+an +"("+zilele_saptamanii[zi_sapt]+")";  
+             var data_time = an + '-' + luna + '-' +zi; 
+             //console.log(data_time)
+             %>
+            <td class="data_infiintare"><time datetime="<%=data_time%>"><%=data_formatata%></time></td>
+          </tr>
+
+          <tr>
+            <td>Visa necesara</td>
+            <td class="visa"><%=locals.produs.visa%></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+<br>
+<br>
+</article>

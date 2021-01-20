@@ -1,0 +1,58 @@
+#galerieStatica {
+    grid-template-columns: repeat(4,1fr);
+  }
+ 
+  #galerieStatica>figure{
+    grid-column: span 2;
+  }
+
+  #galerieStatica>figure:nth-child(3){
+    grid-area: 2/2/3/4
+  }
+  
+  #galerieStatica>figure:nth-child(6){
+    grid-area: 4/2/5/4;
+  }
+  
+  #galerieStatica>figure:nth-child(9){
+    grid-area: 6/2/7/4;
+  }
+  
+  .acasa{
+    display: none;
+  }
+
+  #homeIcon{
+    display: inline;
+  }
+
+  ul.menu>li{
+    font-size: 14px;
+  }
+
+   
+  main{
+    font-size: 3vw;
+}
+
+#main-index{
+  padding-right: 0;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "gr-imgInceput  gr-imgInceput gr-imgInceput  gr-imgInceput"
+                      "gr-despre-a gr-despre-a  gr-cum-f gr-cum-f " 
+                       " gr-poza1 gr-poza1 . ."
+                       " gr-cum-d gr-tabel gr-tabel gr-tabel"
+                       "gr-poza2 gr-poza2 . ."
+                       "gr-video gr-video . .";
+}
+
+#poza1{
+  margin:100px 0 0 100px;
+  
+}
+
+#poza2{
+  margin: 100px 0px 0 100px;
+}

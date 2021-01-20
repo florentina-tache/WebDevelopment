@@ -1,0 +1,90 @@
+    
+    $w:800px;
+    $h:500px;
+    $nrimg:11;
+
+    *{
+    margin:0;
+    padding:0;
+    }
+    
+    body{
+        padding:3rem;
+    }
+    .galerie{
+        width:$w;
+        height:$h;
+        position:relative;
+        overflow:hidden;
+    
+        margin-bottom:5rem;
+    }
+    .galerie figcaption{
+        position:absolute;
+        bottom:0;
+        background:rgba(255,255,255,0.7);
+        width:100%;
+        text-align:center;
+    }
+
+    .galerie figure{
+        position:relative;
+        width:$w;
+        height:$h;
+    }
+    
+    
+    #galerie_animata figure{	
+        position:absolute;
+        left:0;
+        top:0;
+        z-index:0;
+        animation-name:gal_exemplu;
+        animation-timing-function:linear;
+        animation-iteration-count:infinite;
+        animation-fill-mode:forwards;
+        animation-duration:33s;	
+        transform-origin:0px center;
+    }
+
+    #galerie_animata figure:hover{
+        animation-play-state: paused;}
+
+
+    @for $a from $nrimg through 1 {
+        #galerie_animata figure:nth-of-type(#{$a}){
+            animation-delay:#{($nrimg-$a)*3}s;
+        }
+    }
+
+    
+
+
+    @keyframes gal_exemplu{
+        0% {z-index:10;opacity:1;} 
+        4% {transform:scaleY(1);}
+        7%{opacity:1;transform:scaleY(0.3) rotate(0deg);} 
+    
+        9.0908%{z-index:10;opacity:0;transform:scaleY(0.3) rotate(90deg);}
+        9.0909%{z-index:-10; transform:scaleY(0) rotate(90deg);}
+    
+        90.9090%{opacity:0;}
+        90.9091%{opacity:0;transform:rotate(0deg);z-index:-10;}
+        90.9092%{z-index:0;}
+        100%{opacity:1;z-index:0;}
+
+        /*        #{100/$nr_imagini}% {z-index:10;opacity:0;transform:scaleY(0.3) rotate(90deg);}
+        #{100/$nr_imagini}% {z-index:-10; transform:scaleY(0) rotate(90deg);}
+      
+        #{100/$nr_imagini}% {opacity:0;}
+        #{100/$nr_imagini}% {opacity:0;transform:rotate(0deg);z-index:-10;}
+        #{100/$nr_imagini}% {z-index:0;}
+        100% {opacity:1;z-index:0; }*/
+    }
+
+    .gal{
+        border: 10px solid transparent;
+        padding: 15px;
+        border-image: url(imagini/galerie_animata/border.png) 30 round;
+    }
+

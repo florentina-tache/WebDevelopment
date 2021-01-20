@@ -1,0 +1,110 @@
+
+
+    video::cue {
+        background:green;
+        color:white;
+     }
+
+     th,
+     td {
+       border: 1px solid black;
+       padding: 5px;
+     }
+   
+     td:empty {
+       padding: 20px;
+     }
+   
+     table {
+       border-collapse: collapse;
+       empty-cells: show;
+     }
+
+     
+  /*  table td:nth-child(odd) {
+      background-color: Moccasin
+  }
+  
+    table td:nth-child(even) {
+      background-color: BurlyWood
+  }*/
+
+  table th{
+    background-color: Rosybrown;
+  }
+
+  table tr:hover td {
+    background-color: Thistle;
+}
+
+  table tr:hover td[rowspan] {
+    background-color: Moccasin;
+}
+
+  colgroup {
+    display: table-column-group;
+  }
+
+     body {
+      background-color: blanchedalmond;
+      counter-reset: section;
+      font-family: 'Amatic SC';font-size: 22px;
+    }
+
+h2::before {
+  counter-increment: section;
+  content: counter(section) ". ";
+}
+
+
+
+.imagine {
+      width: 60%;
+      height: 60%;
+      margin-bottom: 40px;
+      margin-right: 20px;
+
+    }
+  
+  h1::after {
+     content: url('../imagini/img_index/logo2.png');  
+  }
+  
+
+  
+    #primaImg {
+      height: auto;
+      width:100%;
+      transform: scaleX(1.3);
+      
+    } 
+    body{overflow-x: hidden;}
+  
+  
+    #imgInceput {
+      position: relative;
+      font-family: 'Reenie Beanie';
+    }
+  
+    .centrare1 {
+      position: absolute;
+      top: 20%;
+      left: 55%;
+      transform: translate(-50%, -50%);
+      font-size: 18px;
+      text-align: center;
+      font-size: 45px;
+    }
+  
+    .centrare2 {
+      position: absolute;
+      top: 35%;
+      left: 55%;
+      transform: translate(-50%, -50%);
+      font-size: 18px;
+      text-align: center;
+      font-size: 30px;
+    }
+
+
+

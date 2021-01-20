@@ -1,0 +1,250 @@
+#galerieStatica {
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    overflow: hidden;
+   }
+
+  #galerieStatica img{
+     width: 100%;
+   }
+   #galerieStatica figcaption{
+     text-align:center;
+   }
+   
+   #galerieStatica figure{
+    transition: transform 0.7s;
+  }
+
+  #galerieStatica figure:hover{
+    transform:scale(1.5, 1.5) rotate(360deg);
+    
+  }
+
+  #galerieStatica img:hover{border-radius: 50%;
+    }
+
+
+    *{
+      padding:0;
+      margin:0;
+      text-indent:0;
+    }
+
+
+.banner{
+  position:fixed;
+  width:100%;
+  bottom: 0;
+  right:0;
+  left:0;
+  text-align:center;
+  background-color: Coral;
+  animation: vineStanga 10s linear 1 forwards;
+  
+}
+
+@keyframes vineStanga{
+    0%{background-color: Coral;
+      border: 3px solid Teal;
+      transform:translateX(-100%); }
+    30%  {background-color: Teal;
+      border: 3px solid Coral;}
+    50%{transform:translateX(0vw);
+      background-color: Coral;
+      border: 3px solid Teal;
+    }
+    99.9%{opacity:1;
+      border: 3px solid rgba(0,128,128, 1);}
+    100%{opacity:0;}
+  }
+
+    
+    nav{
+      width:100%;
+      position:fixed;
+      background: black;
+      height:3rem;
+      top:0px;
+      left:0px;
+      font-family:Arial, Helvetica, sans-serif;
+      z-index:20;
+    }
+      ul.menu>li, ul.menu>li>ul.submenu>li{
+      display:block;		
+      font-size:1.2rem;
+      font-weight:bold;
+      height:3rem; 
+      line-height:3rem; 
+      text-align:center;		
+      list-style-type:none;    
+      background: black;
+      
+    }
+    ul.menu>li{
+     float:left;
+     width:13rem;
+    }
+    
+    ul.menu>li>ul.submenu{
+      position:relative;
+      top:0px;
+    }
+
+    ul.menu>li>a,ul.menu>li>label,ul.submenu>li>a, .acasa{
+      display:block;
+      height:	100%;
+      text-decoration:none;
+      color:white;
+      transition:all 0.5s linear;
+    }
+
+    ul.menu>li:last-child {
+      float:right;
+    }
+
+    
+    .acasa:hover{
+      box-shadow: inset 0 0 10px 10px rgb(211,211,211, 0.7);
+    }
+
+    ul.menu label:hover{
+      box-shadow: inset 0 0 10px 10px rgb(211,211,211, 0.7);
+    }
+
+
+    ul.submenu>li>a{
+      transition: all 0.5s;
+    }
+
+    ul.submenu>li>a::before{
+      content: '→';
+      position: relative;
+      opacity: 0;  
+      top: -2px;
+      left: -20px;
+      transition: 0.5s;
+    }
+
+    ul.submenu>li>a:hover::before {
+      opacity: 1;
+      left: 0px;
+    }
+  
+  
+    #hamburger{
+      display:none;
+      height:3rem;
+    }
+    #hamburger img{
+      height:100%;
+      width:auto;
+    }
+    #ch-menu, .ch-submenu{
+      display:none;
+      
+    }
+    ul.submenu{
+      display:none;
+      
+    }
+    .ch-submenu:checked~ul.submenu{
+      display:block;  
+      overflow: hidden;
+      animation-timing-function:linear;
+      animation-fill-mode:forwards;
+      animation-duration:0.3s;
+      animation-name:drop_submenu;
+      transform-origin:top;
+    }
+
+    @keyframes drop_submenu{
+      0% {transform: scaleY(0);} 
+      100%{transform: scaleY(1);}
+  }
+  
+  .acasa{
+    display: block;
+  }
+
+  #homeIcon{
+    display: none;
+  }
+   
+  main{
+    font-size: 2vw;
+}
+
+#main-index{
+  padding-right: 0;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas: "gr-imgInceput  gr-imgInceput gr-imgInceput gr-imgInceput gr-imgInceput gr-imgInceput"
+                      "gr-despre-a gr-despre-a gr-cum-f gr-cum-f gr-cum-d gr-cum-d" 
+                       "gr-poza1  gr-poza1 gr-poza1 gr-poza2 gr-poza2 gr-poza2"
+                       "gr-tabel gr-tabel gr-tabel gr-video gr-video gr-video";
+}
+
+#imgInceput{
+  grid-area:gr-imgInceput;
+}
+
+#poza1{
+  grid-area:gr-poza1;
+  margin:100px 0 0 0px;
+  
+}
+
+#poza2{
+  grid-area:gr-poza2;
+  margin: 100px 0px 0 20px;
+  padding:0;
+}
+
+#despre-a{
+  grid-area:gr-despre-a;
+  padding: 0;
+  margin:70px 0 0 0px;
+  width:250px;
+  
+
+}
+
+#cum-f{
+  grid-area:gr-cum-f;
+  margin:70px 0px 0 0px;
+  width:250px;
+  padding: 0;
+}
+
+#cum-d{
+  grid-area:gr-cum-d;
+  padding: 0;
+  margin:70px 0 0 0px;
+  width:250px;
+  
+  
+  
+}
+
+#tabel{
+  grid-area: gr-tabel;
+  margin: 100px 0px 0 100px;
+  padding:0;
+}
+
+#video{
+  grid-area:gr-video;
+  margin: 60px 0px 0 100px;
+}
+
+
+
+.input_fields label{
+  display:block;
+}
+
+div.input_inline label{
+  display:inline;
+}
+
